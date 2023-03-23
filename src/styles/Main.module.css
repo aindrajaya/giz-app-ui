@@ -1,0 +1,122 @@
+.main {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.label {
+    margin-bottom: 1rem;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #b1b1b1;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: #fff;
+    margin: 2rem;
+    border-radius: 10px;
+    width: 70vw;
+}
+
+.resultContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.imageBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: #fff;
+    margin: 2rem;
+    border-radius: 10px;
+}
+
+.resultBox {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem 1rem 2rem;
+    background-color: #fff;
+    margin: 2rem;
+    border-radius: 10px;
+}
+
+.horizontalShape {
+    background-color: #b3b7bb;
+    height: 2px;
+    width: 100%;
+    border-radius: 10px;
+    margin: 2rem 0 2rem 0;
+}
+
+.picStyle {
+    border-radius: 10px;
+    margin: 0 1rem 0 1rem;
+    height: 30rem;
+    width: auto;
+}
+
+.resultBoxContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.typographyContainer {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.typographyContainer > p {
+    
+}
+
+.description {
+    color: #b3b7bb;
+    font-size: 15px;
+    font-weight: 300;
+    margin: 1rem 0 1rem 0;
+}
+
+.resultCardContainer {
+    display: flex;
+}
+
+.resultCard {
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: #edf5f8;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.resultCard > h2 {
+    font-size: 25px;
+}
+
+.buttonUpload {
+    width: 100px;
+    height: 35px;
+    background-color: #f19d19;
+    border-radius: 10px;
+    border: none;
+    color: #fff;
+    transition: 0.4s ease-in-out;
+}
+
+.buttonUpload:hover {
+    box-shadow: 1px 1px 15px 3px rgb(111, 111, 111, 0.3);
+}
