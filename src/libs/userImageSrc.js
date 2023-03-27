@@ -5,12 +5,17 @@ export function useImage() {
   const [imageSrc, setImageSrc] = useState(null);
 
   useEffect(() => {
-    // Call the API every 5 seconds
-    const intervalId = setInterval(() => {
-      axios.get('/image-result', { responseType: 'blob' })
-        .then((response) => setImageSrc(URL.createObjectURL(response.data)))
-        .catch((error) => console.error(error));
-    }, 5000);
+    async function getImageData(){
+      try {
+        const res = await axios.get('/image-result', { responseType: 'blob' })
+        const data = res.data
+        setImageSrc(URL.createObjectURL(data))
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getImageData();
+    const intervalId = setInterval(getImageData, 5000);
 
     return () => clearInterval(intervalId);
   }, []);
