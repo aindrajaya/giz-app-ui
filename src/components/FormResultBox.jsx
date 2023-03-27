@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from "../styles/Main.module.css";
 import {usePotentialData} from '@/libs/usePotential';
 
 function FormResultBox() {
   const data = usePotentialData()
-  // const { potential_energy, potential_capacity, pv_number, global_irradiation, total_area, data.userInput } = data;
-
+  
   return (
     <div className={styles.resultBoxContainer}>
       <div className={styles.typographyContainer}>
@@ -33,7 +32,6 @@ function FormResultBox() {
           <div className={styles.resultCard}>
             <p>Total Area</p>
             <h3>{data?.total_area} m^2</h3>
-            {/* <p>400m</p> */}
           </div>
         </div>
       </div>
