@@ -2,6 +2,7 @@ import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/navbar'
 import MainForm from '@/components/MainForm'
 import { useState, useEffect } from 'react'
+import TailwindHome from '@/components/TailwindComponent'
 
 export default function Home() {
   const [users, setUsers] = useState([])
@@ -29,8 +30,9 @@ export default function Home() {
         ))}
       </ul>
     </div> */}
-      <Navbar />
-      <MainForm />
+      {/* <Navbar />
+      <MainForm /> */}
+      <TailwindHome />
     </>
   )
 }
