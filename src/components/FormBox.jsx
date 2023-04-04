@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import axios from "../libs/axios"
 import styles from "../styles/Main.module.css";
 import ImageResultBox from './ImageResultBox';
-import LoadingOverlay from 'react-loading-overlay';
 
 const LoadingComponent = ({data}) => {
   // const [loading, setLoading] = useState(false);
