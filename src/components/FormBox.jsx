@@ -2,15 +2,14 @@ import React, { useState, useEffect, Fragment } from 'react'
 import axios from "../libs/axios"
 import ImageResultBox from './ImageResultBox';
 
-const LoadingComponent = ({data}) => {
+const LoadingComponent = ({data }) => {
   // const [loading, setLoading] = useState(false);
   return(
     <div style={{backgroundColour:"gray", width:"100px", height:"100px"}} >Loading...</div>
   )
 }
 
-const FormBox = () => {
-  const [loading, setLoading] = useState(false);
+const FormBox = ({setLoadingState}) => {
   const [file, setFile] = useState(null);
   const [scale, setScale] = useState("");
   const [pixel, setPixel] = useState("");
@@ -28,7 +27,7 @@ const FormBox = () => {
 
   const handleCalculation = async (event) => {
     event.preventDefault()
-    setLoading(true);
+    setLoadingState(true)
     setScale(handleScale(pixel, meter))
     const formData = new FormData();
     formData.append("file", file);
@@ -47,6 +46,14 @@ const FormBox = () => {
     })
       .then((response) => setMessage(response.data.message))
       .catch((e) => setMessage(`Upload failed ${e}`))
+    setLoadingState(false)
+  }
+
+  const handleLoading = () => {
+    setLoadingState(true);
+    setTimeout(() => {
+      setLoadingState(false);
+    }, 5000);
   }
 
   const handleScale = (a, b) => {
@@ -117,6 +124,7 @@ const FormBox = () => {
       {/* {message ? <p>{message}</p> : <LoadingComponent />} */}
 
     </form>
+    <button className="w-24 h-9 bg-orange-500 hover:shadow-lg rounded-lg border-none text-white transition duration-400 ease-in-out" onClick={handleLoading}>Coba Loading</button>
     </Fragment>
   );
 };
