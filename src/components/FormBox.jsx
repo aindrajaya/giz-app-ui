@@ -1,5 +1,8 @@
 import React, { useState, Fragment } from 'react'
-import axios from "../libs/axios"
+import axios1 from "../libs/axios"
+import axios from 'axios';
+
+
 
 const FormBox = ({setLoadingState, isLoading}) => {
   const [file, setFile] = useState(null);
@@ -28,10 +31,15 @@ const FormBox = ({setLoadingState, isLoading}) => {
     formData.append("efficiencyx", parseFloat(efficiency));
     formData.append("system_lossesx", parseFloat(systemLosses));
     console.log(formData, "form data input")
-    await axios.post('/uploadimage', formData, {
+    // await axios1.post('/uploadimage', formData, {
+    //   headers: {
+    //     "Content-Type": "multipart/form-data",
+    //   },
+    // })
+    await axios.post("http://localhost:8000/uploadimage", formData, {
       headers: {
-        "Content-Type": "multipart/form-data",
-      },
+        "Content-Type": "multipart/form-data"
+      }
     })
       .then((response) => setMessage(response.data.message))
       .catch((e) => setMessage(`Upload failed ${e}`))

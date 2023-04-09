@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import axios from "./axios"
+import axios1 from "./axios"
+import axios from "axios";
 
 export function usePotentialData() {
   const [data, setData] = useState(null);
@@ -7,9 +8,11 @@ export function usePotentialData() {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await axios.get('/potential-result');
+        // const response = await axios1.get('/potential-result');
+        const response = await axios.get('http://localhost:8000/potential-result');
         const data = response.data.data;
         setData(data);
+        setData(dataRes)
       } catch (error) {
         console.error(error);
       }
