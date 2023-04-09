@@ -30,9 +30,9 @@ export default function Home() {
         ))}
       </ul>
     </div> */}
-      {/* <Navbar />
-      <MainForm /> */}
-      <TailwindHome />
+      {/* <Navbar /> */}
+      <MainForm />
+      {/* <TailwindHome /> */}
     </>
   )
 }
