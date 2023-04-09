@@ -10,11 +10,11 @@ function MainForm() {
   const setLoadingState = (isLoading) => {
     setLoading(isLoading);
   };
-  console.log(isLoading, "kondisi loading state")
+
   return (
     <div className="flex bg-[#ecf5f8] w-screen">
       <div className="flex flex-col w-45vw">
-        <FormBox setLoadingState={setLoadingState}/>
+        <FormBox setLoadingState={setLoadingState} isLoading={isLoading}/>
       </div>
       <div className="flex flex-col w-fit ml-8">
         <div className="flex flex-col justify-center items-center p-4 bg-white m-8 rounded-lg">
