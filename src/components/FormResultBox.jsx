@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from "../styles/Main.module.css";
 import {usePotentialData} from '@/libs/usePotential';
 
 function FormResultBox() {
   const data = usePotentialData()
-  // const { potential_energy, potential_capacity, pv_number, global_irradiation, total_area, data.userInput } = data;
-
+  
   return (
     <div className="flex-col justify-center">
       <div className="flex-col m-4">

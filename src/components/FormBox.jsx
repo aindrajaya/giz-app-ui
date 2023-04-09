@@ -1,7 +1,7 @@
 import React, { useState, Fragment } from 'react'
 import axios from "../libs/axios"
 
-const FormBox = ({setLoadingState}) => {
+const FormBox = ({setLoadingState, isLoading}) => {
   const [file, setFile] = useState(null);
   const [scale, setScale] = useState("");
   const [pixel, setPixel] = useState("");
@@ -38,12 +38,6 @@ const FormBox = ({setLoadingState}) => {
     setLoadingState(false)
   }
 
-  const handleLoading = () => {
-    setLoadingState(true);
-    setTimeout(() => {
-      setLoadingState(false);
-    }, 5000);
-  }
 
   const handleScale = (a, b) => {
     return a/b
@@ -88,7 +82,7 @@ const FormBox = ({setLoadingState}) => {
         <label>
           Efficiency per module
           <br />
-          <input className="mb-1 px-4 py-2 rounded-md border border-gray-300 w-2/5" type="number" name="efficiency" placeholder='percentage' value={efficiency} onChange={(e) => setEfficiency(e.target.value)} required/>
+          <input className="mb-1 px-4 py-2 rounded-md border border-gray-300 w-2/5" type="number" name="efficiency" placeholder='0.0' value={efficiency} onChange={(e) => setEfficiency(e.target.value)} required/>
         </label>
 
         <br />
@@ -104,13 +98,19 @@ const FormBox = ({setLoadingState}) => {
         <label>
           Array + system Efficiency
           <br />
-          <input className="mb-1 px-4 py-2 rounded-md border border-gray-300 w-2/5" type="number" name="arraysystemlosses" placeholder='percentage' value={systemLosses} onChange={(e) => setSystemLosses(e.target.value)} required/>
+          <input className="mb-1 px-4 py-2 rounded-md border border-gray-300 w-2/5" type="number" name="arraysystemlosses" placeholder='0.0' value={systemLosses} onChange={(e) => setSystemLosses(e.target.value)} required/>
         </label>
 
         <br />
 
-        <button className="w-24 h-9 bg-orange-500 hover:shadow-lg rounded-lg border-none text-white transition duration-400 ease-in-out" type='submit'>Submit</button>
-        {/* {message ? <p>{message}</p> : <LoadingComponent />} */}
+        {isLoading ? (
+          <span className="mr-2">
+            <span className="inline-block w-4 h-4 rounded-full bg-white mr-2 animate-pulse"></span>
+            <span>Loading</span>
+          </span>
+        ) : 
+          <button className="w-24 h-9 bg-orange-500 hover:shadow-lg rounded-lg border-none text-white transition duration-400 ease-in-out" type='submit'>Submit</button>
+        }
       </form>
     </Fragment>
   );
