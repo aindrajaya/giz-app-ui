@@ -6,32 +6,33 @@ function FormResultBox() {
   const data = usePotentialData()
   
   return (
-    <div className={styles.resultBoxContainer}>
-      <div className={styles.typographyContainer}>
-        <h2>Potential Result</h2>
+    <div className="flex-col justify-center">
+      <div className="flex-col m-4">
+        <h1 className='font-bold text-2xl'>Potential Result</h1>
         {data?.userInput && (
           <>
-            <p>Scale : {data.userInput.scale} pixel/m^2</p>
-            <p>Width & Length : {data.userInput.module_width} m & {data.userInput.module_length} m</p>
-            <p>Capacity : {data.userInput.capacity_per_module} Wp</p>
-            <p>Efficiency : {data.userInput.efficiency_per_module*100} %</p>
-            <p>Location specific Irradiance : {data.userInput.location_spesific_solar_irradiance} kWh/m^2</p>
-            <p>Array+system Efficiency : {data.userInput.system_losses_percentage*100} %</p></>
+            <p>Scale : <span className='font-bold'>{data.userInput.scale} pixel/m²</span></p>
+            <p>Width & Length : <span className='font-bold'>{data.userInput.module_width} m & {data.userInput.module_length} m</span></p>
+            <p>Capacity : <span className='font-bold'>{data.userInput.capacity_per_module} Wp</span></p>
+            <p>Efficiency : <span className='font-bold'>{data.userInput.efficiency_per_module*100} %</span></p>
+            <p>Location specific Irradiance : <span className='font-bold'>{data.userInput.location_spesific_solar_irradiance} kWh/m²</span></p>
+            <p>Array+system Efficiency : <span className='font-bold'>{data.userInput.system_losses_percentage*100} %</span></p></>
         )}
       </div>
       <div>
-        <div className={styles.resultCardContainer}>
-          <div className={styles.resultCard}>
-            <p>Maximum PV System Capacity</p>
-            <h3>{data?.potential_capacity ? data.potential_capacity/1000 : 0} kWp</h3>
+        <div className="flex">
+          <div className="text-s flex justify-end flex-col bg-blue-100 p-4 m-4 rounded-md">
+            <p className='text-lg font-semibold'>Maximum PV System Capacity</p>
+            <h3><span className='font-bold'>{data?.potential_capacity ? data.potential_capacity/1000 : 0} kWp</span> </h3>
           </div>
-          <div className={styles.resultCard}>
-            <p>Estimated Yearly Energy</p>
-            <h3>{data?.potential_energy? parseInt(data.potential_energy) : 0} kWh</h3>
+          <div className="text-s flex justify-end flex-col bg-blue-100 p-4 m-4 rounded-md">
+            <p className='text-lg font-semibold'>Estimated Yearly Energy</p>
+            <h3><span className='font-bold'>{data?.potential_energy? parseInt(data.potential_energy) : 0} kWh</span></h3>
           </div>
-          <div className={styles.resultCard}>
-            <p>Total Area</p>
-            <h3>{data?.total_area} m^2</h3>
+          <div className="text-s flex justify-end flex-col bg-blue-100 p-4 m-4 rounded-md">
+            <p className='text-lg font-semibold'>Total Area</p>
+            <h3><span className='font-bold'>{Math.floor(data?.total_area)} m²</span></h3>
+            {/* <p>400m</p> */}
           </div>
         </div>
       </div>
