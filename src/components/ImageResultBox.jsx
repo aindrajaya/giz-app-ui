@@ -6,7 +6,7 @@ function ImageResultBox() {
   const imageSrc = useImage();
 
   return (
-    <div style={{padding:"0px"}}>
+    <div className='flex-col p-0'>
       {imageSrc && (
         <Image  width={400} height={400} src={imageSrc} alt="Generated Mask"/>
       )}
