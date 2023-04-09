@@ -31,7 +31,7 @@ function FormResultBox() {
           </div>
           <div className="text-s flex justify-end flex-col bg-blue-100 p-4 m-4 rounded-md">
             <p className='text-lg font-semibold'>Total Area</p>
-            <h3><span className='font-bold'>{Math.floor(data?.total_area)} m²</span></h3>
+            <h3><span className='font-bold'>{data?.total_area? Math.floor(data?.total_area) : 0} m²</span></h3>
             {/* <p>400m</p> */}
           </div>
         </div>
