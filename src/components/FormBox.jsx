@@ -51,7 +51,7 @@ const FormBox = ({setLoadingState}) => {
 
   return (
     <Fragment>
-      <form className="bg-white p-4 sm:p-8 m-8 rounded-lg w-full flex-col flex" onSubmit={handleLoading}>
+      <form className="bg-white p-4 sm:p-8 m-8 rounded-lg w-full flex-col flex" onSubmit={handleCalculation}>
         <h2 className="text-4xl mb-8">Input your image</h2>
         <label>
           Upload File
@@ -111,9 +111,7 @@ const FormBox = ({setLoadingState}) => {
 
         <button className="w-24 h-9 bg-orange-500 hover:shadow-lg rounded-lg border-none text-white transition duration-400 ease-in-out" type='submit'>Submit</button>
         {/* {message ? <p>{message}</p> : <LoadingComponent />} */}
-
       </form>
-      <button className="w-24 h-9 bg-orange-500 hover:shadow-lg rounded-lg border-none text-white transition duration-400 ease-in-out" onClick={handleLoading}>Coba Loading</button>
     </Fragment>
   );
 };
